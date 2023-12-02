@@ -1,0 +1,36 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add</h1>
+
+@if (ViewBag.InstructorAddError != null)
+{
+        <div class="alert alert-danger" role="alert">
+        @ViewBag.InstructorAddError
+        </div>
+}
+
+<form asp-controller="Instructor" asp-action="Add" method="post">
+
+    <input type="text" name="InstructorName" placeholder="Eğitmen ismi giriniz" /><br />
+    <input type="text" name="InstructorSurname" placeholder="Eğitmen Soyismi giriniz" /><br />
+    <input type="email" name="Email" placeholder="Email giriniz" /><br />
+    <input type="password" name="Password" placeholder="Password giriniz" /><br />
+    <input type="text" name="Adress" placeholder="Adres giriniz" /><br />
+    <input type="text" name="Phone" placeholder="Telefon giriniz" /><br />
+    <input type="text" name="Price" placeholder="Saatlik Ücret giriniz" /><br />
+    <input type="text" name="Description" placeholder="Açıklama giriniz" /><br />
+    <select class="custom-select" name="BranchName">
+        <option selected>Ders Seçiniz</option>
+        <option value="Fizik">Fizik</option>
+        <option value="Matematik">Matematik</option>
+        <option value="İngilizce">İngilizce</option>
+        <option value="Kimya">Kimya</option>
+        <option value="Türkçe">Türkçe</option>
+        <option value="Tarih">Tarih</option>
+    </select>
+    <input type="submit" value="Kaydet" class="btn btn-danger" />
+</form>

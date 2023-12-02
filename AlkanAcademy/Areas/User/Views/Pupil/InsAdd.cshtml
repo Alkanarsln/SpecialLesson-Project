@@ -1,0 +1,20 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "InsAdd";
+    Layout = "~/Areas/User/Views/Shared/_LayoutPupil.cshtml";
+}
+
+<h1>InsAdd</h1>
+
+<form asp-area="User" asp-controller="Pupil" asp-action="InsAdd" method="post">
+
+    <input type="hidden" name="ID" value="@Model.ID" />
+    <input type="text" name="InstructorName" value="@Model.InstructorName" readonly /><br />
+    <input type="text" name="InstructorSurname" value="@Model.InstructorSurname" readonly /><br />
+    <input type="text" name="BranchName" value="@Model.BranchName" readonly /><br />
+    <input type="text" name="PuName" placeholder="Adınızı Giriniz" /><br />
+    <input type="text" name="PuSurname" placeholder="Soyadınızı giriniz" /><br />
+    <input type="hidden" name="id" />
+    <input type="submit" value="Kaydet" class="btn btn-success" />
+
+</form>

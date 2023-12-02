@@ -1,0 +1,21 @@
+﻿@model Pupil
+@{
+    ViewData["Title"] = "UpdatePup";
+    Layout = "~/Areas/User/Views/Shared/_LayoutPupil.cshtml";
+}
+
+<h1>UpdatePup</h1>
+
+<form asp-area="User" asp-controller="Pupil" asp-action="UpdatePup" method="post">
+    <input type="hidden" name="ID" value="@Model.ID">
+    <input type="text" name="PupilName" value="@Model.PupilName" placeholder="Öğrenci Adı Giriniz" /><br /><br />
+    <input type="text" name="PupilSurname" value="@Model.PupilSurname" placeholder="Öğrenci Soyadı Giriniz" /><br /><br />
+    <input type="email" name="Email" value="@Model.Email" placeholder="Email Giriniz" /><br /><br />
+    <input type="password" name="Password" value="@Model.Password" placeholder="Şifre Giriniz" /><br /><br />
+    <select class="custom-select" name="Gender" value="@Model.Gender">
+        <option selected>@Model.Gender</option>
+        <option value="Erkek">Erkek</option>
+        <option value="Bayan">Bayan</option>
+    </select>
+    <input type="submit" value="Kaydet" class="btn btn-success" />
+</form>

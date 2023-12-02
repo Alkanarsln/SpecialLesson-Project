@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Pupil>
+@{
+    ViewData["Title"] = "PupList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>PupList</h1>
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger" role="alert">
+        KAYIT BULUNAMADI...!
+    </div>
+}
+else
+{
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Öğrenci İsmi </th>
+                <th scope="col">Öğrenci Soyismi</th>
+                <th scope="col">Email</th>
+                <th scope="col">Cinsiyet</th>
+                <th scope="col">###</th>
+                <th scope="col">##</th>
+                <th scope="col">####</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <td>@item.PupilName </td>
+                    <td>@item.PupilSurname </td>
+                    <td>@item.Email </td>
+                    <td>@item.Gender </td>
+                    <td><a asp-controller="Pupil" asp-action="Update" asp-route-id="@item.ID" class="btn btn-success">Update</a></td>
+                    <td><a asp-controller="Pupil" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a></td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}

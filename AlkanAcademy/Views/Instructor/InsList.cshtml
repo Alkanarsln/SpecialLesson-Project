@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Instructor>
+@{
+    ViewData["Title"] = "InsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>InsList</h1>
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger" role="alert">
+        KAYIT BULUNAMADI...!
+    </div>
+}
+else
+{
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Eğitmen İsmi </th>
+                <th scope="col">Eğitmen Soyismi</th> 
+                <th scope="col">Branş</th>    
+                <th scope="col">###</th>
+                <th scope="col">##</th>
+                <th scope="col">####</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <td>@item.InstructorName </td>
+                    <td>@item.InstructorSurname </td>
+                    <td>@item.BranchName </td>
+                    <td><a asp-controller="Instructor" asp-action="Update" asp-route-id="@item.ID" class="btn btn-success">Update</a></td>
+                    <td><a asp-controller="Instructor" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a></td>
+                    <td><a asp-controller="Instructor" asp-action="Details" asp-route-id="@item.ID" class="btn btn-dark">Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

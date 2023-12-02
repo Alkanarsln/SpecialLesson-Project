@@ -1,0 +1,33 @@
+﻿@model Pupil
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/User/Views/Shared/_LayoutPupil.cshtml";
+}
+
+<h1>Update</h1>
+
+
+@if (ViewBag.PupilUpdateError != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.PupilUpdateError
+    </div>
+}
+else
+{
+    <form asp-controller="Pupil" asp-action="Guncelle" method="post">
+        <input type="hidden" name="ID" value="@Model.ID" />
+        <input type="text" name="PupilName" value="@Model.PupilName" placeholder="Öğrenci Adı Giriniz" /><br />
+        <input type="text" name="PupilSurname" value="@Model.PupilSurname" placeholder="Öğrenci Soyadı Giriniz" /><br />
+        <input type="text" name="Email" value="@Model.Email" placeholder="Öğrenci Soyadı Giriniz" /><br />
+        <input type="text" name="Password" value="@Model.Password" placeholder="Öğrenci Soyadı Giriniz" /><br />
+        <select class="custom-select" name="Gender" value="@Model.Gender">
+            <option selected>Cinsiyet Seçiniz</option>
+            <option value="Erkek">Erkek</option>
+            <option value="Kız">Kız</option>
+
+        </select>
+
+        <input type="submit" value="Güncelle" class="btn btn-success" />
+    </form>
+}

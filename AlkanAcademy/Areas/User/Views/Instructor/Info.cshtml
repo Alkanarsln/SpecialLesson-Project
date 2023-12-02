@@ -1,0 +1,44 @@
+﻿@model InstructorDto
+@{
+    ViewData["Title"] = "Info";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Info</h1>
+
+<label>Eğitmen İsmi</label>
+<input type="text" name="InstructorName" value="@Model.InstructorName" disabled />
+<br />
+<br />
+<label>Eğitmen Soyismi</label>
+<input type="text" name="InstructorName" value="@Model.InstructorSurname" disabled />
+<br />
+<br />
+<label>Branş</label>
+<input type="text" name="BranchName" value="@Model.BranchName" disabled />
+<br />
+<br />
+<label>Adres</label>
+<input type="text" name="Adress" value="@Model.Adress" disabled />
+<br />
+<br />
+<label>Email</label>
+<input type="text" name="Email" value="@Model.Email" disabled />
+<br />
+<br />
+<label>Password</label>
+<input type="text" name="Password" value="@Model.Password" disabled />
+<br />
+<br />
+<label>Telefon</label>
+<input type="text" name="Phone" value="@Model.Phone" disabled />
+<br />
+<br />
+<label>Saatlik Ücret</label>
+<input type="text" name="Price" value="@Model.Price" disabled />
+<br />
+<br />
+<label>Özgeçmiş</label>
+<input type="text" name="Description" value="@Model.Description" disabled /><br />
+
+<a asp-area="User" asp-controller="Instructor" asp-action="UpdateIns" class="btn btn-dark">Insructor Update</a>

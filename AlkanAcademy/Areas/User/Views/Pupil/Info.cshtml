@@ -1,0 +1,29 @@
+﻿@model PupilDto
+@{
+    ViewData["Title"] = "Info";
+    Layout = "~/Areas/User/Views/Shared/_LayoutPupil.cshtml";
+}
+
+<h1>Info</h1>
+
+
+<label>Öğrenci İsmi</label>
+<input type="text" name="PupilName" value="@Model.PupilName" disabled />
+<br />
+<br />
+<label>Öğrenci Soyismi</label>
+<input type="text" name="PupilSurname" value="@Model.PupilSurname" disabled />
+<br />
+<br />
+<label>Email</label>
+<input type="text" name="Email" value="@Model.Email" disabled />
+<br />
+<br />
+<label>Password</label>
+<input type="text" name="Password" value="@Model.Password" disabled />
+<br />
+<br />
+<label>Gender</label>
+<input type="text" name="Gender" value="@Model.Gender" disabled /><br />
+
+<a asp-area="User" asp-controller="Pupil" asp-action="UpdatePup" class="btn btn-primary">Update Information</a>

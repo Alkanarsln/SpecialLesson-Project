@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Instructor>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/User/Views/Shared/_LayoutPupil.cshtml";
+}
+
+<h1>Index</h1>
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Eğitmen İsmi </th>
+                <th scope="col">Eğitmen Soyismi</th>
+                <th scope="col">Branş</th>
+                <th scope="col">###</th>
+                <th scope="col">##</th>
+                <th scope="col">####</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <td>@item.InstructorName </td>
+                    <td>@item.InstructorSurname </td>
+                    <td>@item.BranchName </td>
+                    <td><a asp-area="User" asp-controller="Pupil" asp-action="Details" asp-route-id="@item.ID" class="btn btn-dark">Details</a></td>
+                    <td><a asp-area="User" asp-controller="Pupil" asp-action="InsAdd" asp-route-id="@item.ID" class="btn btn-dark">Add</a></td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
